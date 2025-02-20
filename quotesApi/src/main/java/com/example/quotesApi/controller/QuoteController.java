@@ -13,11 +13,10 @@ import com.example.quotesApi.service.QuoteService;
 public class QuoteController {
 	
 	@Autowired
-	private QuoteService quoteService;
-	
+	private QuoteService quoteService;	
 	
 	@GetMapping("quote")
-	public List<Quote> getQuote() {
+	public Quote getQuote() {
 		return quoteService.getList();
 	}
 }
