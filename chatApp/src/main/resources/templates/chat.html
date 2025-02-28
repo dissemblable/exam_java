@@ -5,6 +5,7 @@
     <title>Chat Motivant</title>
 </head>
 <body>
+	<a th:href="@{'/historique'}">Historique</a>
     <h1>Chat Motivant</h1>
     <form th:action="@{/send}" th:object="${conversation}" method="post">
         <label for="userName">Nom :</label>
