@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Chat Motivant</title>
+</head>
+<body>
+    <h1>Chat Motivant</h1>
+    <form th:action="@{/send}" th:object="${conversation}" method="post">
+        <label for="userName">Nom :</label>
+        <input type="text" id="userName" name="userName" th:value="*{userName}" required/><br/><br/>
+        
+        <label for="userMessage">Votre message :</label>
+        <textarea id="userMessage" name="userMessage" th:text="*{userMessage}" required></textarea><br/><br/>
+        
+        <button type="submit">Envoyer</button>
+    </form>
+    
+    <div th:if="${conversation.response}">
+        <h2>Réponse inspirante :</h2>
+        <p th:text="${conversation.response}"></p>
+    </div>
+</body>
+</html>

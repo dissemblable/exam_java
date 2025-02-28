@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Liste des Utilisateurs</title>
+</head>
+<body>
+    <h1>Utilisateurs</h1>
+    <ul>
+        <li th:each="user : ${users}">
+            <a th:href="@{'/conversations/' + ${user}}" th:text="${user}"></a>
+        </li>
+    </ul>
+</body>
+</html>
